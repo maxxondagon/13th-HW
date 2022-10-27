@@ -18,6 +18,7 @@
 		1F7990D1290AA30500ADD808 /* StandartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7990D0290AA30500ADD808 /* StandartTableViewCell.swift */; };
 		1F7990D3290AA41000ADD808 /* WithSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7990D2290AA41000ADD808 /* WithSwitchTableViewCell.swift */; };
 		1F7990D5290AA45700ADD808 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7990D4290AA45700ADD808 /* UserInfoTableViewCell.swift */; };
+		1F7990D7290AA82A00ADD808 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7990D6290AA82A00ADD808 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1F7990D0290AA30500ADD808 /* StandartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartTableViewCell.swift; sourceTree = "<group>"; };
 		1F7990D2290AA41000ADD808 /* WithSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		1F7990D4290AA45700ADD808 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1F7990D6290AA82A00ADD808 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1F7990B4290A9A1D00ADD808 /* SettingsViewController.swift */,
+				1F7990D6290AA82A00ADD808 /* DetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				1F7990B3290A9A1D00ADD808 /* SceneDelegate.swift in Sources */,
 				1F7990CF290A9FD700ADD808 /* Model.swift in Sources */,
 				1F7990D3290AA41000ADD808 /* WithSwitchTableViewCell.swift in Sources */,
+				1F7990D7290AA82A00ADD808 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
