@@ -57,6 +57,18 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 45
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = DetailViewController()
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewController.cellData = cellData?[indexPath.section][indexPath.row]
+        if viewController.cellData?.type != .withSwitch {
+            print("Выбран пункт: \(viewController.cellData?.title ?? "")")
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            print("Пункт \(viewController.cellData?.title ?? "") не имеет DetailView")
+        }
+    }
 }
 
 class SettingsViewController: UIViewController {
