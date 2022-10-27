@@ -10,6 +10,8 @@ import SnapKit
 
 private var cellData: [[CellData]]?
 
+// MARK: - Extension
+
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,14 +27,14 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         standartCell?.cellData = cellData?[indexPath.section][indexPath.row]
         standartCell?.accessoryType = .disclosureIndicator
         
-        let userInfoCell = tableView.dequeueReusableCell(withIdentifier: CellType.userInfo.rawValue) as? UserInfoViewCell
+        let userInfoCell = tableView.dequeueReusableCell(withIdentifier: CellType.userInfo.rawValue) as?
+            UserInfoViewCell
         userInfoCell?.cellData = cellData?[indexPath.section][indexPath.row]
         userInfoCell?.accessoryType = .disclosureIndicator
         
         let withSwitchInfoCell = tableView.dequeueReusableCell(withIdentifier: CellType.withSwitch.rawValue) as? WithSwitchTableViewCell
         withSwitchInfoCell?.cellData = cellData?[indexPath.section][indexPath.row]
         withSwitchInfoCell?.selectionStyle = .none
-//        withSwitchInfoCell?.
         withSwitchInfoCell?.accessoryType = .none
         
         let cellType = cellData?[indexPath.section][indexPath.row].type
@@ -55,7 +57,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 45
     }
-
 }
 
 class SettingsViewController: UIViewController {
