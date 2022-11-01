@@ -10,14 +10,19 @@ import SnapKit
 
 class StandartTableViewCell: UITableViewCell {
     
-    var cellData: CellData? {
-        didSet {
-            icon.image = cellData?.icon
-            mainLabel.text = cellData?.title
-            detailLabel.text = cellData?.detailText
-            iconView.backgroundColor = cellData?.imageBackgroundColor
-            icon.tintColor = cellData?.iconTintColor
-        }
+    static let indentifier = "standartTableViewCell"
+    
+    // MARK: - Data
+    
+    private var cellData: CellData?
+    
+    func fillData(from instance: CellData) {
+        self.cellData = instance
+        icon.image = cellData?.icon
+        mainLabel.text = cellData?.title
+        detailLabel.text = cellData?.detailText
+        iconView.backgroundColor = cellData?.imageBackgroundColor
+        icon.tintColor = cellData?.iconTintColor
     }
     
     // MARK: - Outlets
@@ -94,5 +99,4 @@ class StandartTableViewCell: UITableViewCell {
             make.right.equalTo(contentView).inset(15)
         }
     }
-    
 }
