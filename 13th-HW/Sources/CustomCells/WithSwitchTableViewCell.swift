@@ -10,14 +10,19 @@ import SnapKit
 
 class WithSwitchTableViewCell: UITableViewCell {
     
-    var cellData: CellData? {
-        didSet {
-            icon.image = cellData?.icon
-            mainLabel.text = cellData?.title
-            detailLabel.text = cellData?.detailText
-            iconView.backgroundColor = cellData?.imageBackgroundColor
-            iconView.tintColor = cellData?.iconTintColor
-        }
+    static let indentifier = "withSwitchTableViewCell"
+    
+    // MARK: - Data
+    
+    private var cellData: CellData?
+    
+    func fillData(from instance: CellData) {
+        self.cellData = instance
+        icon.image = cellData?.icon
+        mainLabel.text = cellData?.title
+        detailLabel.text = cellData?.detailText
+        iconView.backgroundColor = cellData?.imageBackgroundColor
+        iconView.tintColor = cellData?.iconTintColor
     }
     
     // MARK: - Outlets
@@ -107,7 +112,7 @@ class WithSwitchTableViewCell: UITableViewCell {
         }
     }
     
-    //MARK: - Actions
+    // MARK: - Actions
     
     @objc func changeSwitch() {
         cellSwitch.isOn

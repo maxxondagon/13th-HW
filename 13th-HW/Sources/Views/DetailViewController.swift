@@ -8,12 +8,26 @@
 import UIKit
 import SnapKit
 
-class DetailViewController: UIViewController {
-
-    var cellData: CellData?
-
+final class DetailViewController: UIViewController {
+    
+    // MARK: - Data
+    
+    private var cellData: CellData?
+    
+    var getData: CellData? {
+        self.cellData
+    }
+    
+    func fillData(from instance: CellData) {
+        self.cellData = instance
+        icon.image = cellData?.icon
+        detailTitleText.text = cellData?.title
+        iconView.backgroundColor = cellData?.imageBackgroundColor
+        icon.tintColor = cellData?.iconTintColor
+    }
+    
     // MARK: - Outlets
-
+    
     private lazy var iconView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -21,7 +35,7 @@ class DetailViewController: UIViewController {
         view.tintColor = .white
         return view
     }()
-
+    
     private lazy var icon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -29,54 +43,45 @@ class DetailViewController: UIViewController {
         imageView.tintColor = .white
         return imageView
     }()
-
+    
     private lazy var detailTitleText: UILabel = {
         let lable = UILabel()
         lable.textColor = .black
         lable.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return lable
     }()
-
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupHierarchy()
         setupLayout()
-        fillSetting()
     }
-
+    
     // MARK: - Setup
-
+    
     private func setupHierarchy() {
         view.addSubview(iconView)
         view.addSubview(detailTitleText)
         iconView.addSubview(icon)
     }
-
+    
     private func setupLayout() {
         iconView.snp.makeConstraints { make in
             make.center.equalTo(view)
             make.height.width.equalTo(80)
         }
-
+        
         icon.snp.makeConstraints { make in
             make.center.equalTo(iconView)
             make.height.width.equalTo(60)
         }
-
+        
         detailTitleText.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.centerY.equalTo(view).offset(90)
         }
     }
-
-    private func fillSetting() {
-        icon.image = cellData?.icon
-        detailTitleText.text = cellData?.title
-        iconView.backgroundColor = cellData?.imageBackgroundColor
-        icon.tintColor = cellData?.iconTintColor
-    }
 }
-

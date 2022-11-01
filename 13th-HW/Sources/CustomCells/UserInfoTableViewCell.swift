@@ -9,13 +9,19 @@ import UIKit
 import SnapKit
 
 class UserInfoViewCell: UITableViewCell {
-    var cellData: CellData? {
-        didSet {
-            icon.image = cellData?.icon
-            mainLabel.text = cellData?.title
-            detailLabel.text = cellData?.detailText
-            iconView.tintColor = cellData?.iconTintColor
-        }
+    
+    static let indentifier = "userInfoTableViewCell"
+    
+    // MARK: - Data
+    
+    private var cellData: CellData?
+    
+    func fillData(from instance: CellData) {
+        self.cellData = instance
+        icon.image = cellData?.icon
+        mainLabel.text = cellData?.title
+        detailLabel.text = cellData?.detailText
+        iconView.tintColor = cellData?.iconTintColor
     }
     
     // MARK: - Outlets
@@ -93,6 +99,5 @@ class UserInfoViewCell: UITableViewCell {
             make.right.equalTo(contentView).inset(20)
         }
     }
-
 }
 
